@@ -1,3 +1,5 @@
+git config --global user.name "https://github.com/syedarakhshan"
+git config --global user.email "noorsyeda349@gmail.com"
 git init -b main
 git add .
 git commit -m "Initial website"
@@ -18,18 +20,3 @@ git push origin main
 git add site/index.html
 git commit -m "Update event heading to 2026"
 git push origin main
-docker build -t devops-b-2329181:v1 .
-docker run -d --name devops-b-2329181 -p 8080:80 devops-b-2329181:v1
-docker images
-docker ps
-minikube image load devops-b-2329181:v1
-minikube image ls
-kubectl apply -f deployment.yaml
-kubectl get deployments
-kubectl get pods
-kubectl apply -f service.yaml
-kubectl get svc
-minikube service devops-b-2329181 --url
-kubectl scale deployment devops-b-2329181 --replicas=2
-kubectl get pods
-kubectl get deployment devops-b-2329181
