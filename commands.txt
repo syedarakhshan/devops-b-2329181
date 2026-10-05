@@ -1,0 +1,15 @@
+docker build -t devops-b-2329181:v1 .
+docker run -d --name devops-b-2329181 -p 8080:80 devops-b-2329181:v1
+docker images
+docker ps
+kubectl config current-context
+kubectl get nodes
+minikube image load devops-b-2329181:v1
+minikube image ls
+kubectl apply -f deployment.yaml
+kubectl get deployments
+kubectl get pods
+kubectl apply -f service.yaml
+kubectl get svc
+kubectl get endpoints devops-b-2329181
+minikube service devops-b-2329181 --url
